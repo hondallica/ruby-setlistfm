@@ -13,16 +13,21 @@ API document https://api.setlist.fm/docs/1.0/index.html
 require 'setlistfm'
 
 setlistfm = Setlistfm.new('your_api_key')
+```
 
-# or loading environment variable
-# export SETLISTFM_API_KEY=your_api_key
+### Setting API key
+If environment variable SETLISTFM_API_KEY is set in .bash_profile etc, no argument is necessary.
 
+    export SETLISTFM_API_KEY=your_api_key
+
+```ruby
 setlistfm = Setlistfm.new
+```
 
 # change API key
 
+```ruby
 setlistfm.api_key = 'new_api_key'
-
 ```
 
 ## License
