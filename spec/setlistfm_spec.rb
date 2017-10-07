@@ -19,11 +19,23 @@ RSpec.describe Setlistfm do
       expect { Setlistfm.new }.to raise_error(RuntimeError)
     end
 
-    it 'update an API key' do
+    it 'change an API key' do
       api_key = 'your_api_key'
       setlistfm = Setlistfm.new(api_key)
       setlistfm.api_key = 'update_api_key'
       expect(setlistfm.api_key).to eq 'update_api_key'
+    end
+  end
+
+  context 'API URL' do
+    it 'get an API url' do
+      setlistfm = Setlistfm.new('your_api_key')
+      expect(setlistfm.url).to eq 'https://api.setlist.fm'
+    end
+    it 'change an API url' do
+      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm.url = 'https://example.com'
+      expect(setlistfm.url).to eq 'https://example.com'
     end
   end
 end
