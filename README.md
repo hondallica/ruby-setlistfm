@@ -24,7 +24,7 @@ If environment variable SETLISTFM_API_KEY is set in .bash_profile etc, no argume
 setlistfm = Setlistfm.new
 ```
 
-# change API key
+### change API key
 
 ```ruby
 setlistfm.api_key = 'new_api_key'
