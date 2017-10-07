@@ -1,11 +1,10 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'setlistfm/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'setlistfm'
-  spec.version       = Setlistfm::VERSION
+  spec.version       = '0.1.0'
   spec.authors       = ['Hondallica']
   spec.email         = ['hondallica@gmail.com']
 
@@ -22,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'faraday', '~> 0.13.1'
-  spec.add_dependency 'faraday_middleware','~> 0.12.2'
+  spec.add_dependency 'faraday_middleware', '~> 0.12.2'
 
   spec.add_development_dependency 'bundler', '~> 1.15'
   spec.add_development_dependency 'rake', '12.1.0'
