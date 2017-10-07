@@ -14,6 +14,15 @@ require 'setlistfm'
 
 setlistfm = Setlistfm.new('your_api_key')
 
+# or loading environment variable
+# export SETLISTFM_API_KEY=your_api_key
+
+setlistfm = Setlistfm.new
+
+# change API key
+
+setlistfm.api_key = 'new_api_key'
+
 ```
 
 ## License
