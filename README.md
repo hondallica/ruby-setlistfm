@@ -35,6 +35,17 @@ setlistfm = Setlistfm.new
 setlistfm.api_key = 'new_api_key'
 ```
 
+## API URL
+### get API URL
+```ruby
+setlistfm.url # https://api.setlist.fm
+```
+
+### change API URL
+```ruby
+setlistfm.url = 'http://example.com'
+```
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
