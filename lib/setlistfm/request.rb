@@ -9,6 +9,9 @@ module Request
   def http
     Faraday.new(url: base_url) do |f|
       f.request :url_encoded
+      f.request :retry, max: 5, interval: 1.0
+      f.options[:open_timeout] = 2
+      f.options[:timeout] = 5
       f.headers['x-api-key'] = @api_key
       f.headers['Accept'] = 'application/json'
       f.headers['User-Agent'] = "ruby-setlistfm/#{version}"
