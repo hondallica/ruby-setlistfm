@@ -11,7 +11,7 @@ RSpec.describe Setlistfm do
       let(:mbid) { '27e2997f-f7a1-4353-bcc4-57b9274fa9a4' }
 
       before do
-        WebMock.stub_request(:get, "#{Setlistfm.new.url}/rest/1.0/artist/#{mbid}").to_return(
+        WebMock.stub_request(:get, "https://api.setlist.fm/rest/1.0/artist/#{mbid}").to_return(
           body: File.read('spec/fixtures/artist/200.json'),
           status: 200,
           headers: { 'Content-Type' =>  'application/json' })
