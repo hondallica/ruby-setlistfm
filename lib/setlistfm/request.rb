@@ -11,7 +11,7 @@ module Request
       f.request :url_encoded
       f.headers['x-api-key'] = @api_key
       f.headers['Accept'] = 'application/json'
-      f.headers['User-Agent'] = 'ruby-setlistfm'
+      f.headers['User-Agent'] = "ruby-setlistfm/#{self.version}"
       f.adapter :net_http
     end
   end

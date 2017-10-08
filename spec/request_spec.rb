@@ -14,7 +14,7 @@ RSpec.describe Setlistfm do
 
     it 'has a User-Agent' do
       setlistfm = Setlistfm.new('your_api_key')
-      expect(setlistfm.http.headers['User-Agent']).to eq 'ruby-setlistfm'
+      expect(setlistfm.http.headers['User-Agent']).to eq "ruby-setlistfm/#{setlistfm.version}"
     end
 
     it 'has an Accept header ' do
