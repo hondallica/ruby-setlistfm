@@ -1,10 +1,11 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'setlistfm/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'setlistfm'
-  spec.version       = '0.1.0'
+  spec.version       = Version.version
   spec.authors       = ['Hondallica']
   spec.email         = ['hondallica@gmail.com']
 

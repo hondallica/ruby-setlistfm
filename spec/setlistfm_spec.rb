@@ -1,6 +1,24 @@
 require 'spec_helper'
 
 RSpec.describe Setlistfm do
+  context 'version' do
+    it 'has a version' do
+      setlistfm = Setlistfm.new('your_api_key')
+      expect(setlistfm.version).to be_truthy
+    end
+
+    it 'has an api_version' do
+      setlistfm = Setlistfm.new('your_api_key')
+      expect(setlistfm.api_version).to eq '1.0'
+    end
+
+    it 'change an api_version' do
+      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm.api_version = '1.1'
+      expect(setlistfm.api_version).to eq '1.1'
+    end
+  end
+
   context 'API Key' do
     it 'set an API key from argument' do
       api_key = 'your_api_key'
