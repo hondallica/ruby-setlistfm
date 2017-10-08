@@ -1,9 +1,11 @@
 require 'setlistfm/version'
 require 'setlistfm/request'
+require 'setlistfm/api_method'
 
 class Setlistfm
   include Version
   include Request
+  include APIMethod
   attr_accessor :api_key, :url, :version, :api_version
 
   def initialize(api_key = ENV['SETLISTFM_API_KEY'])

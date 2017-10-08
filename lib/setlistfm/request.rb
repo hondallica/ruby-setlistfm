@@ -8,6 +8,8 @@ module Request
 
   def http
     Faraday.new(url: base_url) do |f|
+      f.response :mashify
+      f.response :json
       f.request :url_encoded
       f.request :retry, max: 5, interval: 1.0
       f.options[:open_timeout] = 2
