@@ -6,4 +6,8 @@ module APIMethod
   def artist_setlists(mbid, params = {})
     http.get("/rest/#{api_version}/artist/#{mbid}/setlists", params)
   end
+
+  def city(geoid)
+    http.get("/rest/#{api_version}/city/#{geoid}")
+  end
 end

@@ -31,6 +31,10 @@ RSpec.describe Setlistfm do
 
     context 'artist/setlist' do
       let(:mbid) { '27e2997f-f7a1-4353-bcc4-57b9274fa9a4' }
+      
+      after do
+        WebMock.disable!
+      end
 
       it 'request was successful' do
         WebMock.stub_request(:get, "https://api.setlist.fm/rest/1.0/artist/#{mbid}/setlists").to_return(
@@ -54,6 +58,22 @@ RSpec.describe Setlistfm do
         res = setlistfm.artist_setlists(mbid, { p: 2 })
         expect(res.status).to eq 200
         expect(res.body.page).to eq 2
+      end
+    end
+
+    context 'city' do
+      let(:geoid) { '5357527' }
+
+      it 'request was successful' do
+        WebMock.stub_request(:get, "https://api.setlist.fm/rest/1.0/city/#{geoid}").to_return(
+          body: File.read('spec/fixtures/city/geoid.json'),
+          status: 200,
+          headers: { 'Content-Type' =>  'application/json' })
+
+        setlistfm = Setlistfm.new('your_api_key')
+        res = setlistfm.city(geoid)
+        expect(res.status).to eq 200
+        expect(res.body.name).to eq 'Hollywood'
       end
     end
   end
