@@ -10,4 +10,8 @@ module APIMethod
   def city(geoid)
     http.get("/rest/#{api_version}/city/#{geoid}")
   end
+
+  def search_artists(params = {})
+    http.get("/rest/#{api_version}/search/artists", params)
+  end
 end
