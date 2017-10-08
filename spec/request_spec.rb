@@ -8,17 +8,17 @@ RSpec.describe Setlistfm do
     end
 
     it 'has a x-api-key header' do
-      setlistfm = Setlistfm.new
+      setlistfm = Setlistfm.new('your_api_key')
       expect(setlistfm.http.headers['x-api-key']).to be_truthy
     end
 
     it 'has a User-Agent' do
-      setlistfm = Setlistfm.new
+      setlistfm = Setlistfm.new('your_api_key')
       expect(setlistfm.http.headers['User-Agent']).to eq 'ruby-setlistfm'
     end
 
     it 'has an Accept header ' do
-      setlistfm = Setlistfm.new
+      setlistfm = Setlistfm.new('your_api_key')
       expect(setlistfm.http.headers['Accept']).to eq 'application/json'
     end
   end
