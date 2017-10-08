@@ -28,7 +28,7 @@ RSpec.describe Setlistfm do
     end
   end
 
-  context 'artist/setlist2' do
+  context 'artist/setlist' do
     let(:url) { "https://api.setlist.fm/rest/1.0/artist/#{mbid}/setlists?p=2" }
     let(:fixture) { 'spec/fixtures/artist/setlists/200_page2.json' }
 
