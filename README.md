@@ -46,6 +46,19 @@ setlistfm.url # https://api.setlist.fm
 setlistfm.url = 'http://example.com'
 ```
 
+## API version
+### get API version
+```ruby
+setlistfm.api_version # 1.0
+```
+
+### change API version
+Usually you do not need to change. Use it if the API version is up.
+
+```ruby
+setlistfm.api_version = '1.1'
+```
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
