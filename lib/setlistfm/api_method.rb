@@ -34,4 +34,28 @@ module APIMethod
   def setlist_version(version_id, params = {})
     http.get("/rest/#{api_version}/setlist/version/#{version_id}", params)
   end
+
+  def setlist(setlist_id, params = {})
+    http.get("/rest/#{api_version}/setlist/#{setlist_id}", params)
+  end
+
+  def user(user_id, params = {})
+    http.get("/rest/#{api_version}/user/#{user_id}", params)
+  end
+
+  def user_attended(user_id, params = {})
+    http.get("/rest/#{api_version}/user/#{user_id}/attended", params)
+  end
+
+  def user_edited(user_id, params = {})
+    http.get("/rest/#{api_version}/user/#{user_id}/edited", params)
+  end
+
+  def venue(venue_id, params = {})
+    http.get("/rest/#{api_version}/venue/#{venue_id}", params)
+  end
+
+  def venue_setlists(venue_id, params = {})
+    http.get("/rest/#{api_version}/venue/#{venue_id}/setlists", params)
+  end
 end
