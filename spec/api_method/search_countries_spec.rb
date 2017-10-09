@@ -10,7 +10,6 @@ RSpec.describe Setlistfm do
   end
   
   let(:setlistfm) { Setlistfm.new('your_api_key') }
-  let(:setlistfm) { Setlistfm.new() }
   let(:url) { %r|https://api\.setlist\.fm/rest/1\.0/search/countries\?*| }
 
   context 'search_countries' do
