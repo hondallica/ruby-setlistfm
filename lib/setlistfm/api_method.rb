@@ -30,4 +30,8 @@ module APIMethod
   def search_venues(params = {})
     http.get("/rest/#{api_version}/search/venues", params)
   end
+
+  def setlist_version(version_id, params = {})
+    http.get("/rest/#{api_version}/setlist/version/#{version_id}", params)
+  end
 end
