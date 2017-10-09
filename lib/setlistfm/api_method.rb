@@ -14,4 +14,20 @@ module APIMethod
   def search_artists(params = {})
     http.get("/rest/#{api_version}/search/artists", params)
   end
+
+  def search_cities(params = {})
+    http.get("/rest/#{api_version}/search/cities", params)
+  end
+
+  def search_countries(params = {})
+    http.get("/rest/#{api_version}/search/countries", params)
+  end
+
+  def search_setlists(params = {})
+    http.get("/rest/#{api_version}/search/setlists", params)
+  end
+
+  def search_venues(params = {})
+    http.get("/rest/#{api_version}/search/venues", params)
+  end
 end
