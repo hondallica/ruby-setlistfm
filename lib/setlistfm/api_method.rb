@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module APIMethod
   def artist(mbid)
     http.get("/rest/#{api_version}/artist/#{mbid}")

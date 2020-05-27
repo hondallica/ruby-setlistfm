@@ -14,6 +14,7 @@ RSpec.describe Setlistfm do
     WebMock.disable!
   end
 
+  let(:api_key) { 'your_api_key' }
   let(:mbid) { '27e2997f-f7a1-4353-bcc4-57b9274fa9a4' }
 
   context 'artist/setlist' do
@@ -21,7 +22,7 @@ RSpec.describe Setlistfm do
     let(:fixture) { 'spec/fixtures/artist/setlists/200_page1.json' }
 
     it 'request was successful' do
-      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm = Setlistfm.new(api_key)
       res = setlistfm.artist_setlists(mbid)
       expect(res.status).to eq 200
       expect(res.body.page).to eq 1
@@ -33,7 +34,7 @@ RSpec.describe Setlistfm do
     let(:fixture) { 'spec/fixtures/artist/setlists/200_page2.json' }
 
     it 'pagenation' do
-      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm = Setlistfm.new(api_key)
       res = setlistfm.artist_setlists(mbid, p: 2)
       expect(res.status).to eq 200
       expect(res.body.page).to eq 2

@@ -2,14 +2,20 @@ require 'spec_helper'
 
 RSpec.describe Setlistfm do
   before do
+    WebMock.enable!
     WebMock.stub_request(:get, url).to_return(
       body: File.read(fixture),
       status: 200,
       headers: { 'Content-Type' => 'application/json' }
     )
   end
-  
-  let(:setlistfm) { Setlistfm.new('your_api_key') }
+
+  after do
+    WebMock.disable!
+  end
+
+  let(:api_key) { 'your_api_key' }
+  let(:setlistfm) { Setlistfm.new(api_key) }
   let(:url) { %r|https://api\.setlist\.fm/rest/1\.0/search/artists\?*| }
   let(:mbid) { '27e2997f-f7a1-4353-bcc4-57b9274fa9a4' }
 

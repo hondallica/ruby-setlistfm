@@ -1,19 +1,21 @@
 require 'spec_helper'
 
 RSpec.describe Setlistfm do
+  let(:api_key) { 'your_api_key' }
+
   context 'version' do
     it 'has a version' do
-      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm = Setlistfm.new(api_key)
       expect(setlistfm.version).to be_truthy
     end
 
     it 'has an api_version' do
-      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm = Setlistfm.new(api_key)
       expect(setlistfm.api_version).to eq '1.0'
     end
 
     it 'change an api_version' do
-      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm = Setlistfm.new(api_key)
       setlistfm.api_version = '1.1'
       expect(setlistfm.api_version).to eq '1.1'
     end
@@ -21,9 +23,8 @@ RSpec.describe Setlistfm do
 
   context 'API Key' do
     it 'set an API key from argument' do
-      api_key = 'your_api_key'
       setlistfm = Setlistfm.new(api_key)
-      expect(setlistfm.api_key).to eq 'your_api_key'
+      expect(setlistfm.api_key).to eq api_key
     end
 
     it "set an API key from ENV['SETLISTFM_API_KEY']" do
@@ -38,7 +39,6 @@ RSpec.describe Setlistfm do
     end
 
     it 'change an API key' do
-      api_key = 'your_api_key'
       setlistfm = Setlistfm.new(api_key)
       setlistfm.api_key = 'update_api_key'
       expect(setlistfm.api_key).to eq 'update_api_key'
@@ -47,11 +47,11 @@ RSpec.describe Setlistfm do
 
   context 'API URL' do
     it 'get an API url' do
-      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm = Setlistfm.new(api_key)
       expect(setlistfm.url).to eq 'https://api.setlist.fm'
     end
     it 'change an API url' do
-      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm = Setlistfm.new(api_key)
       setlistfm.url = 'https://example.com'
       expect(setlistfm.url).to eq 'https://example.com'
     end
