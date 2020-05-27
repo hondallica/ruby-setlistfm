@@ -14,13 +14,15 @@ RSpec.describe Setlistfm do
     WebMock.disable!
   end
 
+  let(:api_key) { 'your_api_key' }
+
   context 'artist' do
     let(:url) { "https://api.setlist.fm/rest/1.0/artist/#{mbid}" }
     let(:mbid) { '27e2997f-f7a1-4353-bcc4-57b9274fa9a4' }
     let(:fixture) { 'spec/fixtures/artist/200.json' }
 
     it 'request was successful' do
-      setlistfm = Setlistfm.new('your_api_key')
+      setlistfm = Setlistfm.new(api_key)
       res = setlistfm.artist(mbid)
       expect(res.status).to eq 200
       expect(res.body.name).to eq 'BABYMETAL'

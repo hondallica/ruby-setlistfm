@@ -1,1 +1,14 @@
-{"id":"5357527","name":"Hollywood","state":"California","stateCode":"CA","coords":{"lat":34.0983425,"long":-118.3267434},"country":{"code":"US","name":"United States"}}
+{
+    "id": "1850147",
+    "name": "Tokyo",
+    "state": "Tokyo",
+    "stateCode": "40",
+    "coords": {
+        "lat": 35.69,
+        "long": 139.692
+    },
+    "country": {
+        "code": "JP",
+        "name": "Japan"
+    }
+}

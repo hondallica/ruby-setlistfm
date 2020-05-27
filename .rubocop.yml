@@ -1,9 +1,42 @@
 AllCops:
+  TargetRubyVersion: 2.5
   Exclude:
     - spec/**/*
-
 Style/Documentation:
   Enabled: false
 
 Style/MethodLength:
   Max: 15
+
+Style/AccessModifierDeclarations:
+  EnforcedStyle: inline
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
